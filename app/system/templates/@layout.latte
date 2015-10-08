@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>{if $title}{$title|striptags} | {/if} {if $web}{$web}{/if}</title>
+
+	{block styles}{/block}
+    <link type="text/css" rel="stylesheet" href="{$basePath}/css/style.css">
+</head>
+
+<body>
+	{include content}
+
+	{block scripts}{/block}
+    <script type="text/javascript" src="{$basePath}/js/script.js"></script>
+</body>
+</html>

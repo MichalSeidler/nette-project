@@ -1,12 +1,14 @@
 <?php
-
 require __DIR__ . '/../vendor/autoload.php';
 
 $configurator = new Nette\Configurator;
 
-//$configurator->setDebugMode('23.75.345.200'); // enable for your remote IP
-$configurator->enableDebugger(__DIR__ . '/../log');
+//Turn off debugger to see in production
+if(isset($_GET['production'])){
+	$configurator->setDebugMode(FALSE);
+}
 
+$configurator->enableDebugger(__DIR__ . '/../log');
 $configurator->setTempDirectory(__DIR__ . '/../temp');
 
 $configurator->createRobotLoader()
