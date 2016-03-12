@@ -4,16 +4,17 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>{if $title}{$title|striptags} | {/if} {if $web}{$web}{/if}</title>
+	{ifset $title}<title>{ifset $title}{$title|striptags} | {/ifset} {ifset $web}{$web|striptags}{/ifset}</title>{/ifset}
 
-	{block styles}{/block}
+	{asset css}
     <link type="text/css" rel="stylesheet" href="{$basePath}/css/style.css">
 </head>
 
 <body>
+	<h1>Tests</h1> <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 	{include content}
 
-	{block scripts}{/block}
+	{asset js}
     <script type="text/javascript" src="{$basePath}/js/script.js"></script>
 </body>
 </html>
